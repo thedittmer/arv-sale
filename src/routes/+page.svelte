@@ -251,6 +251,75 @@
         </div>
     </Card>
 
+    <!-- Add this section before the contact form -->
+    <Card class="p-4 sm:p-6 mb-4 sm:mb-8">
+        <h2 class="text-xl sm:text-2xl font-semibold mb-4">Payment Options</h2>
+        
+        <div class="space-y-6">
+            <!-- Traditional Payment -->
+            <div class="space-y-2">
+                <h3 class="text-lg font-medium">Bank Payment</h3>
+                <p class="text-muted-foreground">
+                    Pay off lien directly at SMB Bank in Neosho, MO. This is the most secure option and 
+                    provides immediate title transfer.
+                </p>
+            </div>
+
+            <!-- Cash Payment -->
+            <div class="space-y-2">
+                <h3 class="text-lg font-medium">Cash Payment</h3>
+                <p class="text-muted-foreground">
+                    Cash payment accepted in person at the time of sale. We'll meet at SMB Bank in Neosho 
+                    for secure transaction and immediate title transfer.
+                </p>
+            </div>
+
+            <!-- Cryptocurrency -->
+            <div class="space-y-2">
+                <h3 class="text-lg font-medium">Bitcoin Payment</h3>
+                <p class="text-muted-foreground">
+                    For tech-savvy buyers, we accept Bitcoin payments. Choose your preferred network:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <!-- Bitcoin Network -->
+                    <div class="p-4 border rounded-lg space-y-2">
+                        <h4 class="font-medium">Bitcoin Network</h4>
+                        <div class="bg-white p-4 rounded-lg inline-block">
+                            <img
+                                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bc1qghyw3qsq789fgc56smff6uth9wukmlx97g3073`}
+                                alt="Bitcoin QR Code"
+                                class="w-32 h-32"
+                            />
+                        </div>
+                        <div class="text-sm text-muted-foreground break-all">
+                            bc1qghyw3qsq789fgc56smff6uth9wukmlx97g3073
+                        </div>
+                    </div>
+
+                    <!-- Lightning Network -->
+                    <div class="p-4 border rounded-lg space-y-2">
+                        <h4 class="font-medium">Lightning Network</h4>
+                        <div class="bg-white p-4 rounded-lg inline-block">
+                            <img
+                                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=lnbc1pnccyj4dqdgdshx6pqg9c8qpp59yd2g7p7230vjkrurvwwnhl5qpsvt0l0gqs9956juwfcwlgh8qussp56mxwm2lda9kzle7wdxjgppv43c6kwdyxkw3p73nwtv0mvyt5cpms9qrsgqcqpcxqy8ayqrzjqv06k0m23t593pngl0jt7n9wznp64fqngvctz7vts8nq4tukvtljqr96vcqq05gqqcqqqqqqqqqqqqqq9grzjqtsjy9p55gdceevp36fvdmrkxqvzfhy8ak2tgc5zgtjtra9xlaz97rxf5yqqxdcqqcqqqqqqqqqqqqqq9g9p44sxgrj2p930swtzukps6emg2ccrwrf2gqr7sp9k7xntsaejjp000ucrywel5yck8qvvapg094gpwnptmvq5jnv9vpzlgn8h5e6csp0d7z5y`}
+                                alt="Lightning Network QR Code"
+                                class="w-32 h-32"
+                            />
+                        </div>
+                        <div class="text-xs text-muted-foreground break-all">
+                            Lightning Network Invoice (scan with compatible wallet)
+                        </div>
+                    </div>
+                </div>
+                <p class="text-sm text-muted-foreground mt-2">
+                    Note: Bitcoin payments are irreversible. Please ensure you're comfortable with 
+                    cryptocurrency transactions before choosing this option.
+                </p>
+            </div>
+        </div>
+    </Card>
+
     <!-- Location Section with Map Link -->
     <Card class="p-4 sm:p-6 mb-4 sm:mb-8">
         <div class="mb-4 sm:mb-6">
