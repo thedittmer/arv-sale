@@ -14,8 +14,11 @@
         email: "",
         phone: "",
         preferredTime: "",
-        message: ""
+        message: "",
+        honeypot: ""
     };
+
+    const artificialDelay = () => new Promise(resolve => setTimeout(resolve, 750));
 
     async function handleSubmit() {
         loading = true;
@@ -23,6 +26,7 @@
         success = false;
 
         try {
+            await artificialDelay();
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
@@ -40,8 +44,11 @@
                     email: "",
                     phone: "",
                     preferredTime: "",
-                    message: ""
+                    message: "",
+                    honeypot: ""
                 };
+            } else if (response.status === 429) {
+                error = 'Too many requests. Please try again later.';
             } else {
                 error = result.message || 'Failed to send message';
             }
@@ -54,6 +61,17 @@
 </script>
 
 <form on:submit|preventDefault={handleSubmit} class="space-y-4">
+    <div class="hidden" aria-hidden="true">
+        <input
+            type="text"
+            name="honeypot"
+            id="honeypot"
+            bind:value={formData.honeypot}
+            tabindex="-1"
+            autocomplete="off"
+        />
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="space-y-2">
             <Label for="name">Name</Label>
@@ -129,4 +147,10 @@
     <Button type="submit" class="w-full" disabled={loading}>
         {loading ? 'Sending...' : 'Schedule Viewing'}
     </Button>
-</form> 
+</form>
+
+<style>
+    .hidden {
+        display: none;
+    }
+</style> 
