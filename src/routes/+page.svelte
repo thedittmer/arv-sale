@@ -112,7 +112,7 @@
     <meta property="twitter:image" content={`${baseUrl}${images[0]}`} />
 
     <!-- Additional SEO -->
-    <meta name="keywords" content="RV for sale, Safari Zanzibar, Class A RV, Diesel Motor Home, Neosho MO, Used RV, 2002 RV, CAT Diesel, Self-contained RV, RV with slides" />
+    <meta name="keywords" content="RV for sale, Safari Zanzibar, Class A RV, Diesel Motor Home, Neosho MO, Used RV, 2002 RV, CAT Diesel, Self-contained RV, RV with slides, Bitcoin payment accepted, Buy RV with Bitcoin, Lightning Network payment" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="RV Owner" />
     <meta name="geo.region" content="US-MO" />
@@ -144,9 +144,19 @@
             },
             "offers": {
                 "@type": "Offer",
-                "price": "24000",
+                "price": "22000",
                 "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
+                "availability": "https://schema.org/InStock",
+                "acceptedPaymentMethod": [
+                    {
+                        "@type": "PaymentMethod",
+                        "name": "Bitcoin"
+                    },
+                    {
+                        "@type": "PaymentMethod",
+                        "name": "Cash"
+                    }
+                ]
             },
             "image": images.map(img => `${baseUrl}${img}`),
             "brand": {
@@ -159,6 +169,10 @@
             "fuelType": "Diesel"
         })}
     </script>
+
+    <!-- Additional Bitcoin-related meta tags -->
+    <meta property="og:title" content="Buy this RV with Bitcoin - 2002 Safari Zanzibar Class A Diesel Motor Home" />
+    <meta name="twitter:title" content="Buy this RV with Bitcoin - 2002 Safari Zanzibar Class A Diesel Motor Home" />
 </svelte:head>
 
 <!-- Add theme toggle button -->
@@ -178,6 +192,30 @@
 </Button>
 
 <div class="container mx-auto px-4 py-4 sm:py-8 max-w-4xl">
+    <!-- Bitcoin Promotion Banner -->
+    <Card class="mb-4 sm:mb-8 bg-gradient-to-r from-orange-500 to-yellow-500">
+        <div class="p-4 sm:p-6 text-white">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                        🌟 Bitcoin Accepted Here!
+                    </h2>
+                    <p class="text-sm sm:text-base opacity-90">
+                        Be part of history - First Class A RV in Missouri available for Bitcoin purchase.
+                        Both Bitcoin Network and Lightning Network accepted.
+                    </p>
+                </div>
+                <Button
+                    variant="secondary"
+                    class="whitespace-nowrap"
+                    onclick={() => document.getElementById('payment-options')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                    Learn More
+                </Button>
+            </div>
+        </div>
+    </Card>
+
     <!-- Mobile-optimized title -->
     <h1 class="text-2xl sm:text-4xl font-bold mb-3 sm:mb-6">
         For Sale: 2002 Safari Zanzibar Class A Diesel Motor Home - $22,000
@@ -252,7 +290,7 @@
     </Card>
 
     <!-- Add this section before the contact form -->
-    <Card class="p-4 sm:p-6 mb-4 sm:mb-8">
+    <Card class="p-4 sm:p-6 mb-4 sm:mb-8" id="payment-options">
         <h2 class="text-xl sm:text-2xl font-semibold mb-4">Payment Options</h2>
         
         <div class="space-y-6">
