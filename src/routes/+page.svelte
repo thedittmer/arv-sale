@@ -223,17 +223,22 @@
     <p class="text-lg sm:text-xl mb-3 sm:mb-4">Located in Neosho, MO</p>
 
     <!-- Photo Gallery with mobile-optimized height -->
-    <Card class="mb-4 sm:mb-8">
+    <Card class="mb-4 sm:mb-8 relative">
         <Carousel opts={{ loop: true }}>
             <CarouselContent>
                 {#each images as image, i}
                     <CarouselItem>
-                        <img
-                            src={image}
-                            alt="RV photo {i + 1}"
-                            class="w-full h-[300px] sm:h-[640px] object-cover rounded-lg"
-                            loading={i === 0 ? "eager" : "lazy"}
-                        />
+                        <div class="relative">
+                            <img
+                                src={image}
+                                alt="RV photo {i + 1}"
+                                class="w-full h-[300px] sm:h-[640px] object-cover rounded-lg"
+                                loading={i === 0 ? "eager" : "lazy"}
+                            />
+                            <div class="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-1 rounded">
+                                {i + 1} / {images.length}
+                            </div>
+                        </div>
                     </CarouselItem>
                 {/each}
             </CarouselContent>
@@ -295,8 +300,14 @@
         
         <div class="space-y-6">
             <!-- Traditional Payment -->
-            <div class="space-y-2">
-                <h3 class="text-lg font-medium">Bank Payment</h3>
+            <div class="space-y-2 p-4 border rounded-lg hover:border-primary transition-colors">
+                <h3 class="text-lg font-medium flex items-center gap-2">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 5H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z"/>
+                        <path d="M3 10h18"/>
+                    </svg>
+                    Bank Payment
+                </h3>
                 <p class="text-muted-foreground">
                     Pay off lien directly at SMB Bank in Neosho, MO. This is the most secure option and 
                     provides immediate title transfer.
@@ -304,8 +315,14 @@
             </div>
 
             <!-- Cash Payment -->
-            <div class="space-y-2">
-                <h3 class="text-lg font-medium">Cash Payment</h3>
+            <div class="space-y-2 p-4 border rounded-lg hover:border-primary transition-colors">
+                <h3 class="text-lg font-medium flex items-center gap-2">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 5H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z"/>
+                        <path d="M3 10h18"/>
+                    </svg>
+                    Cash Payment
+                </h3>
                 <p class="text-muted-foreground">
                     Cash payment accepted in person at the time of sale. We'll meet at SMB Bank in Neosho 
                     for secure transaction and immediate title transfer.
@@ -313,8 +330,14 @@
             </div>
 
             <!-- Cryptocurrency -->
-            <div class="space-y-2">
-                <h3 class="text-lg font-medium">Bitcoin Payment</h3>
+            <div class="space-y-2 p-4 border rounded-lg hover:border-primary transition-colors">
+                <h3 class="text-lg font-medium flex items-center gap-2">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 5H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z"/>
+                        <path d="M3 10h18"/>
+                    </svg>
+                    Bitcoin Payment
+                </h3>
                 <p class="text-muted-foreground">
                     For tech-savvy buyers, we accept Bitcoin payments. Choose your preferred network:
                 </p>
