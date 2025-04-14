@@ -13,7 +13,7 @@
     import ContactForm from "$lib/components/ContactForm.svelte";
 
     const baseUrl = "https://www.arv.sale";
-    const title = "2002 Safari Zanzibar Class A Diesel Motor Home For Sale - $22,000 - Neosho, MO";
+    const title = "2002 Safari Zanzibar Class A Diesel Motor Home For Sale - $21,000 - Neosho, MO";
     const description = "For sale: 2002 Safari Zanzibar Class A Diesel Motor Home. 38' length, CAT Diesel 7.2-L L-6 330hp engine, 78,848 miles, two slide-outs, self-contained. Located in Neosho, MO. Excellent condition with Allison Automatic transmission. Delivery available.";
     
     // Import all images from the static/imgs directory
@@ -43,7 +43,7 @@
     const specifications = [
         { label: "Year", value: "2002" },
         { label: "Make/Model", value: "Safari Zanzibar" },
-        { label: "Price", value: "$22,000" },
+        { label: "Price", value: "$21,000" },
         { label: "Type", value: "Motor Home (Class A)" },
         { label: "Length", value: "38'" },
         { label: "Fuel Type", value: "Diesel" },
@@ -144,7 +144,7 @@
             },
             "offers": {
                 "@type": "Offer",
-                "price": "22000",
+                "price": "21000",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "acceptedPaymentMethod": [
@@ -218,7 +218,7 @@
 
     <!-- Mobile-optimized title -->
     <h1 class="text-2xl sm:text-4xl font-bold mb-3 sm:mb-6">
-        For Sale: 2002 Safari Zanzibar Class A Diesel Motor Home - $22,000
+        For Sale: 2002 Safari Zanzibar Class A Diesel Motor Home - $21,000
     </h1>
     <p class="text-lg sm:text-xl mb-3 sm:mb-4">Located in Neosho, MO</p>
 
